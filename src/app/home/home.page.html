@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inicio sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Inicio sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <app-componente1 nomb="Broder" apelli="Bro"></app-componente1>
+    
+    <ion-text>Inicio de sesión</ion-text>
+    <ion-item>
+      <ion-input text-center label="Usuario" label-placement="floating" fill="outline" placeholder="Su nombre"></ion-input>
+      <br/>
+    </ion-item>
+
+    <ion-item *ngIf="edadUsuario < 25">
+      <ion-input text-center type="number" [(ngModel)] = "edadUsuario" label="Edad" label-placement="floating" fill="outline" placeholder="Edad"></ion-input>
+       
+    </ion-item>
+    <ion-button id="button" (click) = "irPagina1()">Iniciar sesión</ion-button>
+
+    <ion-item>
+      <ion-text *ngFor = "let x of array">
+         Nombre: {{x.nombre}},  Edad: {{x.edad | currency }} <!--Pipe de Ionic https://www.nigmacode.com/ionic/pipes-en-ionic/-->
+
+      </ion-text>
+    </ion-item> 
+  </div>
+
+
+</ion-content>
