@@ -1,18 +1,24 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
   nombreUsuario:string = "Renato";
   edadUsuario: number = 25;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    localStorage.setItem('token', this.nombreUsuario);
+  }
 
+  ngOnInit(){
+
+  }
 
   array: any = [
     {
